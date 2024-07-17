@@ -2,7 +2,6 @@ Name: Naeshkrishna M
 ID: CT4PP5061
 Domain: Python Programming
 Dates: July 15th, 2024 - August 15th, 2024
-
 Overview:
 Functions for Operations: The script defines basic arithmetic operations (add, sub, mul, div) as separate functions.
 Dictionary for Operations: operation_dict maps arithmetic symbols (+, -, *, /) to their corresponding functions.

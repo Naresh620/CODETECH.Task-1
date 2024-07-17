@@ -1,0 +1,43 @@
+import os
+def add(a, b):
+    return a + b
+def sub(a, b):
+    return a - b
+def mul(a, b):
+    return a * b
+def div(a, b):
+    return a / b
+operation_dict = {
+    "+": add,
+    "-": sub,
+    "*": mul,
+    "/": div
+}
+def calculator():
+    first_number = int(input('Enter first number: '))
+    for symbol in operation_dict:
+        print(symbol)
+    continue_flag = True
+    while continue_flag:
+        operation = input('Pick an operation: ')
+        next_number = int(input('Enter next number: '))
+        calculator_function = operation_dict[operation]
+        if calculator_function:
+            output = calculator_function(first_number, next_number)
+            print(f"{first_number} {operation} {next_number} = {output}")
+            continue_input = input("Enter 'y' to continue calculation, 'n' to start a new calculation, or 'x' to exit: ")
+            if continue_input == 'y':
+                first_number = output
+            elif continue_input == 'n':
+                os.system('cls')  # Use 'clear' for cross-platform compatibility
+                calculator()
+                return
+            elif continue_input == 'x':
+                continue_flag = False
+                print('Bye')
+            else:
+                print('Invalid input. Exiting...')
+                continue_flag = False
+        else:
+            print("Invalid operation. Please choose from +, -, *, or /.")
+calculator()
